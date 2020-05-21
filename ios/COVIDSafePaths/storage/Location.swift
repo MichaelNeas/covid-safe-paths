@@ -27,6 +27,7 @@ class Location: Object {
   dynamic var longitude: Double = 0
   dynamic var source: Int = -1
   dynamic var provider: String?
+  dynamic var geohash: String?
   let altitude = RealmOptional<Double>()
   let speed = RealmOptional<Float>()
   let accuracy = RealmOptional<Float>()
@@ -56,6 +57,7 @@ class Location: Object {
     location.altitudeAccuracy.value = backgroundLocation.altitudeAccuracy?.floatValue
     location.bearing.value = backgroundLocation.heading?.floatValue
     location.source = SOURCE_DEVICE
+    //location.hash = backgroundLocation.scryptHash
     return location;
   }
   
