@@ -10,6 +10,7 @@ import NativePicker from '../components/NativePicker';
 import NavigationBarWrapper from '../components/NavigationBarWrapper';
 import Colors from '../constants/colors';
 import { PARTICIPATE } from '../constants/storage';
+import { config } from '../COVIDSafePathsConfig';
 import { GetStoreData, SetStoreData } from '../helpers/General';
 import {
   LOCALE_LIST,
@@ -28,7 +29,7 @@ export const SettingsScreen = ({ navigation }) => {
   const [userLocale, setUserLocale] = useState(
     supportedDeviceLanguageOrEnglish(),
   );
-  const isGPS = tracingStrategy === 'gps';
+  const isGPS = config.tracingStrategy === 'gps';
 
   const backToMain = () => {
     navigation.goBack();
